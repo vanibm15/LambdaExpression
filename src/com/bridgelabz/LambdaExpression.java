@@ -3,7 +3,7 @@ package com.bridgelabz;
 import java.util.regex.Pattern;
 
     @FunctionalInterface
-    interface FirstName {
+    interface LastName {
         void validUser(String name);
     }
 
@@ -11,13 +11,13 @@ import java.util.regex.Pattern;
 
         public static void main(String[] args) {
             System.out.println("Welcome to User Registration program");
-            FirstName function = (name)->{boolean check = Pattern.matches("([A-Z][a-z]{3,})",name);
+            LastName function = (name)->{boolean check = Pattern.matches("([A-Z][a-z]{3,})",name);
                 if (check == true) {
-                    System.out.println("Firstname is Valid");
+                    System.out.println("LastName is Valid");
                 }else
                     System.out.println("Enter valid name");
             };
-            function.validUser("Vani");
+            function.validUser("Manavachari");
         }
 
     }
