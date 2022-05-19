@@ -3,22 +3,22 @@ package com.bridgelabz;
 import java.util.regex.Pattern;
 
     @FunctionalInterface
-    interface LastName {
-        void validUser(String name);
+    interface Email {
+        void validUser(String email);
     }
 
-    public class LambdaExpression {
+public class LambdaExpression {
 
-        public static void main(String[] args) {
-            System.out.println("Welcome to User Registration program");
-            LastName function = (name)->{boolean check = Pattern.matches("([A-Z][a-z]{3,})",name);
-                if (check == true) {
-                    System.out.println("LastName is Valid");
-                }else
-                    System.out.println("Enter valid name");
-            };
-            function.validUser("Manavachari");
-        }
-
+    public static void main(String[] args) {
+        System.out.println("Welcome to User Registration program");
+        Email function = (email)->{
+            boolean check = Pattern.matches("^([a-z]{3}[.][a-z]{3}@[a-z]{2}[.][a-z]{2}[.][a-z]{2})$",email);
+            if (check == true) {
+                System.out.println("Email is Valid");
+            }else
+                System.out.println("Enter valid email");
+        };
+        function.validUser("abc.xyz@bl.co.in");
     }
+}
 
